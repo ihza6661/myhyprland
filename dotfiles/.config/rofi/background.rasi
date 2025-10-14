@@ -1,0 +1,4 @@
+* {
+    // current-image: url("/home/ihza/.config/omarchy/current/theme/backgrounds/8.jpg", both);
+    current-image: url("/home/ihza/.config/omarchy/current/background", both);
+}
