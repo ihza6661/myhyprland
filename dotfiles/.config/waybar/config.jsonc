@@ -78,7 +78,7 @@
     "tooltip-format": "Music"
   },
   "custom/video": {
-    "format": "<span size='x-large' font_desc='Pongo Style'>V</span>",
+    "format": "<span size='large' font_desc='Pongo Style'>󰨜</span>",
     "on-click": "hyprctl dispatch togglespecialworkspace video",
     "tooltip-format": "Video"
   },
