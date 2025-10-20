@@ -1,15 +1,9 @@
 {
   "reload_style_on_change": true,
-  // "layer": "top",
-  "floating": true,
+  "layer": "top",
   "position": "top",
   "spacing": 0,
-  // "margin-top": 10,
-  // "margin-right": 18,
-  "margin-bottom": 0,
-  // "margin-left": 18,
-  "height": 30,
-  "style": "./style.css",
+  "height": 26,
   "modules-left": [
     "custom/omarchy",
     "hyprland/workspaces",
@@ -22,8 +16,8 @@
   "modules-center": [
     "backlight",
     "clock",
-    "custom/power_profile",
-    "custom/update"
+    "custom/update",
+    "custom/screenrecording-indicator"
   ],
   "modules-right": [
     "custom/netspeed",
@@ -35,7 +29,7 @@
     "battery",
     "custom/exit"
   ],
-  // Power Menu
+    // Power Menu
   "custom/exit": {
     "format": "",
     "on-click": "omarchy-menu system",
@@ -56,14 +50,15 @@
       "7": "7",
       "8": "8",
       "9": "9",
-      // "active": "󰣏"
       "active": "<span size='large' font_desc='Pongo Style'>󰣏</span>" // 󱓻   󰣏◇
+      // "active": "󱓻"
     },
     "persistent-workspaces": {
       "1": [],
       "2": [],
       "3": [],
-      "4": []
+      "4": [],
+      "5": []
     }
   },
   "custom/omarchy": {
@@ -72,54 +67,24 @@
     "on-click": "omarchy-menu",
     "tooltip-format": "Omarchy Menu\n\nSuper + Alt + Space"
   },
-  "custom/scratchpad": {
-    "format": "<span size='medium' font_desc='Pongo Style'></span>",
-    "on-click": "hyprctl dispatch togglespecialworkspace music",
-    "tooltip-format": "Music"
-  },
-  "custom/video": {
-    "format": "<span size='large' font_desc='Pongo Style'>󰨜</span>",
-    "on-click": "hyprctl dispatch togglespecialworkspace video",
-    "tooltip-format": "Video"
-  },
-  "custom/browser": {
-    "format": "<span size='x-large' font_desc='Pongo Style'></span>",
-    "on-click": "hyprctl dispatch togglespecialworkspace browser",
-    "tooltip-format": "Browser"
-  },
-  "custom/whatsapp": {
-    "format": "<span size='large' font_desc='Pongo Style'></span>",
-    "on-click": "hyprctl dispatch togglespecialworkspace whatsapp",
-    "tooltip-format": "WhatsApp"
-  },
-  "custom/instagram": {
-    "format": "<span size='large' font_desc='Pongo Style'>󰋾</span>",
-    "on-click": "hyprctl dispatch togglespecialworkspace instagram",
-    "tooltip-format": "Instagram"
-  },
   "custom/update": {
     "format": "",
     "exec": "omarchy-update-available",
     "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update",
     "tooltip-format": "Omarchy update available",
+    "signal": 7,
     "interval": 3600
-  },
-  "custom/power_profile": {
-    "format": "{}",
-    "exec": "/home/ihza/.config/waybar/power_profile.sh",
-    "on-click": "/home/ihza/.config/waybar/power_profile.sh toggle && pkill -RTMIN+8 waybar",
-    "interval": 1
   },
   "cpu": {
     "interval": 5,
     "format": "󰍛",
-    "on-click": "alacritty -e btop"
+    "on-click": "$TERMINAL -e btop"
   },
   "clock": {
     "format": "{:L%A %H:%M}",
-    "format-alt": "{:%d %B %Y}",
+    "format-alt": "{:L%d %B %Y}",
     "tooltip": false,
-    "on-click-right": "omarchy-cmd-tzupdate"
+    "on-click-right": "omarchy-launch-floating-terminal-with-presentation omarchy-tz-select"
   },
   "network": {
     "format-icons": [
@@ -132,19 +97,34 @@
     "format": "{icon}",
     "format-wifi": "{icon}",
     "format-ethernet": "󰀂",
-    "format-disconnected": "󰖪",
+    "format-disconnected": "󰤮",
     "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
     "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "spacing": 1,
-    "on-click": "alacritty --class=Impala -e impala"
+    "on-click": "omarchy-launch-wifi"
   },
-  "custom/netspeed": {
-    "exec": "/home/ihza/.config/waybar/net_speed.sh",
-    "format": "{}",
-    "markup": "pango",
-    "interval": 1
+  "backlight": {
+    "format": "{icon}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "scroll-step": 1
   },
   "battery": {
     "format": "{capacity}% {icon}",
@@ -190,17 +170,17 @@
   "bluetooth": {
     "format": "",
     "format-disabled": "󰂲",
-    "format-connected": "<span size='large' font_desc='Pongo Style'>󰂱 </span>",
+    "format-connected": "",
     "tooltip-format": "Devices connected: {num_connections}",
     "on-click": "blueberry"
   },
   "pulseaudio": {
     "format": "{icon}",
-    "on-click": "alacritty --class=Wiremix -e wiremix",
+    "on-click": "$TERMINAL --class=Wiremix -e wiremix",
     "on-click-right": "pamixer -t",
     "tooltip-format": "Playing at {volume}%",
     "scroll-step": 5,
-    "format-muted": "󰝟",
+    "format-muted": "",
     "format-icons": {
       "default": [
         "",
@@ -224,29 +204,40 @@
     "format": " ",
     "tooltip": false
   },
+  "custom/screenrecording-indicator": {
+    "on-click": "omarchy-cmd-screenrecord",
+    "exec": "$OMARCHY_PATH/default/waybar/indicators/screen-recording.sh",
+    "signal": 8,
+    "return-type": "json"
+  },
   "tray": {
-    "icon-size": 16,
+    "icon-size": 12,
     "spacing": 12
   },
-  "backlight": {
-    "format": "{icon}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "scroll-step": 1
+  "custom/scratchpad": {
+    "format": "<span size='medium' font_desc='Pongo Style'></span>",
+    "on-click": "hyprctl dispatch togglespecialworkspace music",
+    "tooltip-format": "Scratchpad"
+  },
+  "custom/browser": {
+    "format": "<span size='large' font_desc='Pongo Style'></span>",
+    "on-click": "hyprctl dispatch togglespecialworkspace browser ",
+    "tooltip-format": "Browser"
+  },
+  "custom/whatsapp": {
+    "format": "<span size='large' font_desc='Pongo Style'></span>",
+    "on-click": "hyprctl dispatch togglespecialworkspace whatsapp",
+    "tooltip-format": "Whats App"
+  },
+  "custom/video": {
+    "format": "<span size='large' font_desc='Pongo Style'>󰨜</span>",
+    "on-click": "hyprctl dispatch togglespecialworkspace video",
+    "tooltip-format": "Video"
+  },
+  "custom/netspeed": {
+    "exec": "/home/ihza/.config/waybar/net_speed.sh",
+    "format": "{}",
+    "markup": "pango",
+    "interval": 1
   }
 }

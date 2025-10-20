@@ -1,49 +1,49 @@
 [config]
 
 [templates.kitty]
-input_path = '~/.config/matugen/templates/kitty-colors.conf'
-output_path = '~/.config/kitty/colors-matugen.conf'
+input_path = '/home/ihza/.config/matugen/templates/kitty-colors.conf'
+output_path = '/home/ihza/.config/kitty/colors-matugen.conf'
 post_hook = 'pkill -SIGUSR1 kitty'
 
 [templates.alacritty]
-input_path = '~/.config/matugen/templates/alacritty.toml'
-output_path = '~/.config/alacritty/colors.toml'
+input_path = '/home/ihza/.config/matugen/templates/alacritty.toml'
+output_path = '/home/ihza/.config/alacritty/colors.toml'
 
 [templates.rofi]
-input_path = '~/.config/matugen/templates/rofi-colors.rasi'
-output_path = '~/.config/rofi/colors.rasi'
+input_path = '/home/ihza/.config/matugen/templates/rofi-colors.rasi'
+output_path = '/home/ihza/.config/rofi/colors.rasi'
 
 [templates.btop]
-input_path = '~/.config/matugen/templates/btop.theme'
-output_path = '~/.config/btop/themes/matugen.theme'
+input_path = '/home/ihza/.config/matugen/templates/btop.theme'
+output_path = '/home/ihza/.config/btop/themes/matugen.theme'
 
 [templates.dunst]
-input_path = '~/.config/matugen/templates/dunstrc-colors'
-output_path = '~/.config/dunst/dunstrc'
+input_path = '/home/ihza/.config/matugen/templates/dunstrc-colors'
+output_path = '/home/ihza/.config/dunst/dunstrc'
 
 [templates.hyprland]
-input_path = '~/.config/matugen/templates/hyprland-colors.conf'
-output_path = '~/.config/hypr/colors.conf'
+input_path = '/home/ihza/.config/matugen/templates/hyprland-colors.conf'
+output_path = '/home/ihza/.config/hypr/colors.conf'
 post_hook = 'hyprctl reload'
 
 [templates.waybar]
-input_path = '~/.config/matugen/templates/colors.css'
-output_path = '~/.config/waybar/colors.css'
+input_path = '/home/ihza/.config/matugen/templates/colors.css'
+output_path = '/home/ihza/.config/waybar/colors.css'
 # post_hook = 'pkill -SIGUSR2 waybar'
 
 [templates.gtk3]
-input_path = '~/.config/matugen/templates/gtk-colors.css'
-output_path = '~/.config/gtk-3.0/gtk.css'
+input_path = '/home/ihza/.config/matugen/templates/gtk-colors.css'
+output_path = '/home/ihza/.config/gtk-3.0/gtk.css'
 
 [templates.gtk4]
-input_path = '~/.config/matugen/templates/gtk-colors.css'
-output_path = '~/.config/gtk-4.0/gtk-dark.css'
+input_path = '/home/ihza/.config/matugen/templates/gtk-colors.css'
+output_path = '/home/ihza/.config/gtk-4.0/gtk-dark.css'
 
 # [templates.sway]
-# input_path = '~/.config/matugen/templates/sway-colors.conf'
-# output_path = '~/.config/swayosd/colors.conf'
+# input_path = '/home/ihza/.config/matugen/templates/sway-colors.conf'
+# output_path = '/home/ihza/.config/swayosd/colors.conf'
 
 [templates.nwgdock]
-input_path = '~/.config/matugen/templates/colors.css'
-output_path = '~/.config/nwg-dock-hyprland/colors.css'
+input_path = '/home/ihza/.config/matugen/templates/colors.css'
+output_path = '/home/ihza/.config/nwg-dock-hyprland/colors.css'
 

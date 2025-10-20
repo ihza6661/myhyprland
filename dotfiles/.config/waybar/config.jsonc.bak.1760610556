@@ -4,10 +4,10 @@
   "floating": true,
   "position": "top",
   "spacing": 0,
-  "margin-top": 10,
-  "margin-right": 18,
+  // "margin-top": 10,
+  // "margin-right": 18,
   "margin-bottom": 0,
-  "margin-left": 18,
+  // "margin-left": 18,
   "height": 30,
   "style": "./style.css",
   "modules-left": [
@@ -15,7 +15,9 @@
     "hyprland/workspaces",
     "custom/scratchpad",
     "custom/whatsapp",
-    "custom/browser"
+    "custom/browser",
+    "custom/instagram",
+    "custom/video"
   ],
   "modules-center": [
     "backlight",
@@ -61,8 +63,7 @@
       "1": [],
       "2": [],
       "3": [],
-      "4": [],
-      "5": []
+      "4": []
     }
   },
   "custom/omarchy": {
@@ -74,17 +75,27 @@
   "custom/scratchpad": {
     "format": "<span size='medium' font_desc='Pongo Style'></span>",
     "on-click": "hyprctl dispatch togglespecialworkspace music",
-    "tooltip-format": "Scratchpad"
+    "tooltip-format": "Music"
+  },
+  "custom/video": {
+    "format": "<span size='large' font_desc='Pongo Style'>󰨜</span>",
+    "on-click": "hyprctl dispatch togglespecialworkspace video",
+    "tooltip-format": "Video"
   },
   "custom/browser": {
-    "format": "<span size='large' font_desc='Pongo Style'></span>",
-    "on-click": "hyprctl dispatch togglespecialworkspace ",
+    "format": "<span size='x-large' font_desc='Pongo Style'></span>",
+    "on-click": "hyprctl dispatch togglespecialworkspace browser",
     "tooltip-format": "Browser"
   },
   "custom/whatsapp": {
     "format": "<span size='large' font_desc='Pongo Style'></span>",
-    "on-click": "hyprctl dispatch togglespecialworkspace Whatsapp",
-    "tooltip-format": "Whats App"
+    "on-click": "hyprctl dispatch togglespecialworkspace whatsapp",
+    "tooltip-format": "WhatsApp"
+  },
+  "custom/instagram": {
+    "format": "<span size='large' font_desc='Pongo Style'>󰋾</span>",
+    "on-click": "hyprctl dispatch togglespecialworkspace instagram",
+    "tooltip-format": "Instagram"
   },
   "custom/update": {
     "format": "",
