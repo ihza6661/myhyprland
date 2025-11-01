@@ -16,7 +16,7 @@ window#waybar {
   color: @on_background;
   transition-property: background-color;
   transition-duration: 0.5s;
-  /* box-shadow: 0 8px 32px rgba(255, 182, 193, 0.15); */
+  box-shadow: 0 8px 32px rgba(255, 182, 193, 0.15);
 }
 
 .modules-left,
@@ -66,6 +66,7 @@ window#waybar {
 #custom-whatsapp,
 #custom-instagram,
 #custom-video,
+#custom-screenrecording-indicator,
 #tray {
   padding: 0 10px;
   color: @on_background;
@@ -105,4 +106,12 @@ tooltip label {
 
 #backlight {
   font-size: 16px;
+}
+
+#custom-exit,
+#battery,
+#pulseaudio,
+#network,
+#bluetooth {
+  color: @primary;
 }

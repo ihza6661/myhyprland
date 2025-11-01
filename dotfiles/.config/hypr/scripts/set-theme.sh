@@ -3,7 +3,8 @@ set -e
 
 # === Paths ===
 CURRENT_WALLPAPER=$(readlink -f "$HOME/.config/omarchy/current/background")
-MATUGEN="$HOME/.cargo/bin/matugen"
+# MATUGEN="$HOME/.cargo/bin/matugen"
+MATUGEN="$(command -v matugen)"
 MATUGEN_CONFIG="$HOME/.config/matugen/config.toml"
 
 # === 1. Generate new color palette ===

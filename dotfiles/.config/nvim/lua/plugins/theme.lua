@@ -1,1 +1,1 @@
-/home/ihza/.config/omarchy/current/theme/neovim.lua
+/home/ihzabaker/.config/omarchy/current/theme/neovim.lua

@@ -29,7 +29,7 @@
     "battery",
     "custom/exit"
   ],
-    // Power Menu
+  // Power Menu
   "custom/exit": {
     "format": "",
     "on-click": "omarchy-menu system",
@@ -170,7 +170,7 @@
   "bluetooth": {
     "format": "",
     "format-disabled": "󰂲",
-    "format-connected": "",
+    "format-connected": "",
     "tooltip-format": "Devices connected: {num_connections}",
     "on-click": "blueberry"
   },
@@ -235,7 +235,7 @@
     "tooltip-format": "Video"
   },
   "custom/netspeed": {
-    "exec": "/home/ihza/.config/waybar/net_speed.sh",
+    "exec": "/home/ihzabaker/Projects/myhyprland/dotfiles/.config/waybar/net_speed.sh",
     "format": "{}",
     "markup": "pango",
     "interval": 1
