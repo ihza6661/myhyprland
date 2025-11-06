@@ -1,11 +1,15 @@
 # ---------------------------
 # 📁 File System
 # ---------------------------
+alias ls='eza -a --icons=always'
+alias ll='eza -al --icons=always'
+alias lt='eza -a --tree --level=1 --icons=always'
+alias shutdown='systemctl poweroff'
 
-alias ls='eza -lh --group-directories-first --icons=auto'
-alias lsa='ls -a'
-alias lt='eza --tree --level=2 --long --icons --git'
-alias lta='lt -a'
+# alias ls='eza -lh --group-directories-first --icons=auto'
+# alias lsa='ls -a'
+# alias lt='eza --tree --level=2 --long --icons --git'
+# alias lta='lt -a'
 
 # Fuzzy file finder with preview
 alias ff='fzf --preview "bat --style=numbers --color=always {}"'
@@ -81,9 +85,6 @@ alias nrs='npm run start'
 
 # Create a new Laravel project
 alias laravel-new='composer create-project laravel/laravel'
-
-# Serve the project (start built-in PHP server)
-alias serve='php artisan serve'
 
 # Run migrations
 alias laravel-migrate='php artisan migrate'
