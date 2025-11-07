@@ -30,7 +30,6 @@ return {
         "marksman",
         "dockerls",
         "docker_compose_language_service",
-        "eslint",
       },
       handlers = {
         function(server_name)
