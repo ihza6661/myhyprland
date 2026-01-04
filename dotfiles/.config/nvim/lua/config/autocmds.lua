@@ -12,3 +12,17 @@
 --   pattern = "*",
 --   command = "colorscheme pitchblack",
 -- })
+
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = { "*/hypr/hyprland.conf", "*/hypr/*.conf" },
+  callback = function()
+    vim.opt.filetype = "dosini"
+    vim.opt.commentstring = "# %s"
+  end,
+})
+
+-- vim.api.nvim_create_autocmd("BufEnter", {
+--   callback = function()
+--     vim.cmd("syntax enable")
+--   end,
+-- })

@@ -14,8 +14,3 @@ map("n", "<leader>th", function()
     vim.cmd("colorscheme pitchblack")
   end
 end, { desc = "Toggle Colorscheme" })
-
-map("n", "<leader>cc", "<cmd>CopilotChatToggle<CR>", { desc = "Toggle Copilot Chat" })
-map("n", "<leader>ce", "<cmd>CopilotChatExplain<CR>", { desc = "Explain Code" })
-
-require("config.laravel_keymaps")

@@ -1,15 +1,26 @@
 return {
   "nvim-treesitter/nvim-treesitter",
+  event = { "BufReadPost", "BufNewFile" },
   build = ":TSUpdate",
   opts = {
-    ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "javascript", "php", "blade" },
-    modules = {},
-    sync_install = false,
+    ensure_installed = {
+      "lua",
+      "javascript",
+      "typescript",
+      "html",
+      "css",
+      "json",
+      "bash",
+      "python",
+      "markdown",
+      "markdown_inline",
+    },
     auto_install = true,
-    ignore_install = {},
     highlight = {
       enable = true,
+      additional_vim_regex_highlighting = false,
     },
     indent = { enable = true },
   },
 }
+

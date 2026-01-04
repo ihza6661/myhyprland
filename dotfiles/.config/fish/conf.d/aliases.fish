@@ -168,3 +168,7 @@ alias android.off='waydroid session stop'
 
 # restart kitty 
 alias res.kitty='killall -SIGUSR1 kitty'
+
+alias restart.network='systemctl restart NetworkManager'
+
+alias f='yazi'

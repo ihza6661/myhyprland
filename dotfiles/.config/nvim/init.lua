@@ -44,3 +44,10 @@ vim.api.nvim_create_autocmd({ "ColorScheme", "UIEnter", "BufWinEnter" }, {
     end
   end,
 })
+
+-- vim.filetype.add({
+--   pattern = {
+--     [".*%.module%.css"] = "css",
+--     [".*%.custom%-style"] = "css",
+--   },
+-- })
