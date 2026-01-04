@@ -25,3 +25,6 @@ if type -q fzf
         source /usr/share/fzf/completion.fish
     end
 end
+
+# --- opencode ---
+set -g -a fish_user_paths "$HOME/.opencode/bin"

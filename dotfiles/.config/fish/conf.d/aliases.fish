@@ -172,3 +172,11 @@ alias res.kitty='killall -SIGUSR1 kitty'
 alias restart.network='systemctl restart NetworkManager'
 
 alias f='yazi'
+
+alias themes=' cd ~/.config/omarchy/themes'
+
+alias ser='php artisan ser'
+
+alias start='npm run dev'
+
+alias migrate-fresh-seed='php artisan migrate:fresh --seed'

@@ -32,7 +32,6 @@ return {
     opts.formatters_by_ft.javascriptreact = { "prettierd", "prettier" }
     opts.formatters_by_ft.html = { "prettier" }
     opts.formatters_by_ft.css = { "prettier" }
-    opts.formatters_by_ft.php = { "prettier" }
     opts.formatters_by_ft.blade = { "blade-formatter" }
 
     --------------------------------------------------------------------------

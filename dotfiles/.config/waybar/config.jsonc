@@ -3,21 +3,34 @@
   "layer": "top",
   "position": "top",
   "spacing": 0,
-  "height": 26,
+  "height": 36,
+  // Load Modules
+  "include": [
+    "~/.config/waybar/waybar-quicklinks.json",
+    "~/.config/waybar/modules.json"
+  ],
   "modules-left": [
     "custom/omarchy",
     "hyprland/workspaces",
     "custom/scratchpad",
     "custom/whatsapp",
-    "custom/browser",
+    // "custom/browser",
     "custom/instagram",
-    "custom/video"
+    "custom/video",
+    "custom/file",
+    "custom/kitty",
+    "custom/browser",
+    // "custom/waydroid",
+    "custom/obsidian"
+    // "custom/chatgpt"
+    // "group/quicklinks"
+    //"custom/nowplaying"
   ],
   "modules-center": [
     "backlight",
     "clock",
-    "custom/update",
-    "custom/screenrecording-indicator"
+    //"custom/update",
+    "custom/screenrecording-indicator",
   ],
   "modules-right": [
     "custom/netspeed",
@@ -50,6 +63,7 @@
       "7": "7",
       "8": "8",
       "9": "9",
+      "10": "0",
       "active": "<span size='large' font_desc='Pongo Style'>󰣏</span>" // 󱓻   󰣏◇
       // "active": "󱓻"
     },
@@ -77,7 +91,7 @@
   "cpu": {
     "interval": 5,
     "format": "󰍛",
-    "on-click": "xdg-terminal-exec btop"
+    "on-click": "omarchy-launch-or-focus-tui btop"
   },
   "clock": {
     "format": "{:L%A %H:%M}",
@@ -128,7 +142,7 @@
   "battery": {
     "format": "{capacity}% {icon}",
     "format-discharging": "{icon}",
-    "format-charging": "{icon}",
+    "format-charging": " {icon}  {capacity}%",
     "format-plugged": "",
     "format-icons": {
       "charging": [
@@ -169,13 +183,14 @@
   "bluetooth": {
     "format": "",
     "format-disabled": "󰂲",
+    "format-off": "󰂲",
     "format-connected": "",
     "tooltip-format": "Devices connected: {num_connections}",
-    "on-click": "blueberry"
+    "on-click": "omarchy-launch-bluetooth"
   },
   "pulseaudio": {
     "format": "{icon}",
-    "on-click": "xdg-terminal-exec --app-id=com.omarchy.Wiremix -e wiremix",
+    "on-click": "omarchy-launch-or-focus-tui wiremix",
     "on-click-right": "pamixer -t",
     "tooltip-format": "Playing at {volume}%",
     "scroll-step": 5,
@@ -219,7 +234,7 @@
     "tooltip-format": "Music"
   },
   "custom/browser": {
-    "format": "<span size='large' font_desc='Pongo Style'></span>",
+    "format": "<span size='large' font_desc='Pongo Style'>󰊯</span>",
     "on-click": "hyprctl dispatch togglespecialworkspace browser ",
     "tooltip-format": "Browser"
   },
@@ -229,14 +244,52 @@
     "tooltip-format": "Whats App"
   },
   "custom/video": {
-    "format": "<span size='large' font_desc='Pongo Style'>󰨜</span>",
+    "format": "<span size='x-large' font_desc='Pongo Style'>󰯜</span>",
     "on-click": "hyprctl dispatch togglespecialworkspace video",
     "tooltip-format": "Video"
+  },
+  "custom/file": {
+    "format": "<span size='large' font_desc='Pongo Style'></span>",
+    "on-click": "hyprctl dispatch togglespecialworkspace file",
+    "tooltip-format": "File"
+  },
+  "custom/kitty": {
+    "format": "<span size='medium' font_desc='Pongo Style'></span>",
+    "on-click": "hyprctl dispatch togglespecialworkspace kitty",
+    "tooltip-format": "Kitty"
+  },
+  "custom/waydroid": {
+    "format": "<span size='x-large' font_desc='Pongo Style'></span>",
+    "on-click": "hyprctl dispatch togglespecialworkspace waydroid",
+    "tooltip-format": "Waydroid"
+  },
+  "custom/chatgpt": {
+    "format": "  ",
+    "on-click": "omarchy-launch-webapp https://chatgpt.com/",
+    "tooltip-format": "ChatGPT"
+  },
+  "custom/obsidian": {
+    "format": "<span size='large' font_desc='Pongo Style'>󰎚</span>",
+    "on-click": "hyprctl dispatch togglespecialworkspace obsidian",
+    "tooltip-format": "Obsidian"
   },
   "custom/netspeed": {
     "exec": "/home/ihzabaker/Projects/myhyprland/dotfiles/.config/waybar/net_speed.sh",
     "format": "{}",
     "markup": "pango",
     "interval": 1
-  }
+  },
+  // Now Playing
+  "custom/nowplaying": {
+    "exec": "~/.config/waybar/scripts/now-playing.sh",
+    "format": "  {text}",
+    "return-type": "json",
+    "interval": 1,
+    "escape": true,
+    "hide-empty-text": false,
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "on-click-middle": "playerctl previous",
+    "tooltip-format": "Left: Play/Pause\nRight: Next\nMiddle: Previous"
+  },
 }

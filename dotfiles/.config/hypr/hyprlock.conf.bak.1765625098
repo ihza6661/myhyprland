@@ -1,8 +1,4 @@
 source = ~/.config/omarchy/current/theme/hyprlock.conf
- 
-general {
-    ignore_empty_input = true
-}
 
 background {
     monitor =
@@ -20,7 +16,7 @@ label {
     text = cmd[update:1000] echo "$(date +"%H:%M")"
     color = $font_color
     font_size = 100
-    font_family = SF Mono
+    font_family = SF Pro Text
     position = 0, +200
     halign = center
     valign = center
@@ -37,10 +33,10 @@ input-field {
     outer_color = $outer_color
     outline_thickness = 4
 
-    font_family = SF Mono
+    font_family = SF Pro Text
     font_color = $font_color
 
-    placeholder_text = Enter Password
+    placeholder_text = Password 󰈷
     check_color = $check_color
     fail_text = <i>$FAIL ($ATTEMPTS)</i>
 

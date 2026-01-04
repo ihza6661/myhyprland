@@ -11,6 +11,8 @@ return {
       "css",
       "json",
       "bash",
+      "php",
+      "laravel",
       "python",
       "markdown",
       "markdown_inline",
@@ -23,4 +25,3 @@ return {
     indent = { enable = true },
   },
 }
-
