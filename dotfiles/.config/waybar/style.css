@@ -1,7 +1,7 @@
 @import "../omarchy/current/theme/waybar.css";
 
 * {
-  font-family: "SF Mono";
+  font-family: "SF Pro Text";
   font-size: 12pt;
   border: none;
   border-radius: 0;
@@ -38,8 +38,9 @@
 
 #custom-screenrecording-indicator {
   min-width: 12px;
-  margin-left: 8.75px;
+  margin-left: 5px;
   font-size: 10px;
+  padding-bottom: 1px;
 }
 
 #custom-screenrecording-indicator.active {
@@ -67,6 +68,7 @@
 #custom-kitty,
 #custom-chatgpt,
 #custom-obsidian,
+#custom-c,
 #custom-waydroid,
 #custom-screenrecording-indicator,
 #tray {
@@ -147,4 +149,13 @@
 #custom-quicklink9,
 #custom-quicklink10 {
   margin-right: 18px;
+}
+
+#custom-voxtype {
+  min-width: 12px;
+  margin: 0 0 0 7.5px;
+}
+
+#custom-voxtype.recording {
+  color: #a55555;
 }

@@ -20,9 +20,9 @@
     "custom/file",
     "custom/kitty",
     "custom/browser",
-    // "custom/waydroid",
-    "custom/obsidian"
-    // "custom/chatgpt"
+    "custom/obsidian",
+    "custom/c",
+    "custom/a"
     // "group/quicklinks"
     //"custom/nowplaying"
   ],
@@ -190,12 +190,13 @@
   },
   "pulseaudio": {
     "format": "{icon}",
-    "on-click": "omarchy-launch-or-focus-tui wiremix",
+    "on-click": "omarchy-launch-audio",
     "on-click-right": "pamixer -t",
     "tooltip-format": "Playing at {volume}%",
     "scroll-step": 5,
     "format-muted": "",
     "format-icons": {
+      "headphone": "",
       "default": [
         "",
         "",
@@ -223,6 +224,19 @@
     "exec": "$OMARCHY_PATH/default/waybar/indicators/screen-recording.sh",
     "signal": 8,
     "return-type": "json"
+  },
+  "custom/voxtype": {
+    "exec": "omarchy-voxtype-status",
+    "return-type": "json",
+    "format": "{icon}",
+    "format-icons": {
+      "idle": "",
+      "recording": "󰍬",
+      "transcribing": "󰔟"
+    },
+    "tooltip": true,
+    "on-click-right": "omarchy-voxtype-config",
+    "on-click": "omarchy-voxtype-model"
   },
   "tray": {
     "icon-size": 12,
@@ -279,6 +293,18 @@
     "markup": "pango",
     "interval": 1
   },
+  "custom/c": {
+    "format": "<span size='large' font_desc='Pongo Style'>C</span>",
+    "on-click": "hyprctl dispatch togglespecialworkspace c",
+    "markup": "pango",
+    "interval": 1
+  },
+  "custom/a": {
+    "format": "<span size='large' font_desc='Pongo Style'>A</span>",
+    "on-click": "hyprctl dispatch togglespecialworkspace a",
+    "markup": "pango",
+    "interval": 1
+  },
   // Now Playing
   "custom/nowplaying": {
     "exec": "~/.config/waybar/scripts/now-playing.sh",
@@ -291,5 +317,5 @@
     "on-click-right": "playerctl next",
     "on-click-middle": "playerctl previous",
     "tooltip-format": "Left: Play/Pause\nRight: Next\nMiddle: Previous"
-  },
+  }
 }
