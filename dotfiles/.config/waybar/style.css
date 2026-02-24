@@ -80,7 +80,8 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  margin: 10px 10px;
+  /* margin: 10px 10px; */
+  margin: 5px 10px;
 }
 
 #custom-nowplaying {
