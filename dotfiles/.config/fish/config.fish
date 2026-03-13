@@ -28,3 +28,6 @@ end
 
 # --- opencode ---
 set -g -a fish_user_paths "$HOME/.opencode/bin"
+
+# --- local bin ---
+set -g -a fish_user_paths "$HOME/.local/bin"
