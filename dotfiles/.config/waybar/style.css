@@ -20,13 +20,20 @@
 .modules-center > * > * {
   padding: 0 2px;
 }
+#workspaces button {
+  border-bottom: 2px solid transparent;
+}
 
+#workspaces button.active {
+  border-bottom: 2px solid red;
+}
 #workspaces button {
   all: initial;
   padding: 0 6px;
   margin: 0 1.5px;
   min-width: 9px;
 }
+
 
 #workspaces button.empty {
   opacity: 0.5;
@@ -73,6 +80,8 @@
 #custom-chatgpt,
 #custom-obsidian,
 #custom-c,
+#custom-up,
+#custom-down,
 #custom-waydroid,
 
 #tray {

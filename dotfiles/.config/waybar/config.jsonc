@@ -7,24 +7,13 @@
   // Load Modules
   "include": [
     "~/.config/waybar/waybar-quicklinks.json",
-    "~/.config/waybar/modules.json"
+    "~/.config/waybar/modules.json",
   ],
   "modules-left": [
     "custom/omarchy",
     "hyprland/workspaces",
-    "custom/scratchpad",
-    "custom/whatsapp",
-    // "custom/browser",
-    "custom/instagram",
-    "custom/video",
-    "custom/file",
-    "custom/kitty",
-    "custom/browser",
-    "custom/obsidian",
-    "custom/c",
-    "custom/a"
-    // "group/quicklinks"
-    //"custom/nowplaying"
+    "custom/up",
+    "custom/down"
   ],
   "modules-center": [
     "backlight",
@@ -40,20 +29,19 @@
     "pulseaudio",
     // "cpu",
     "battery",
-    "custom/exit"
+    "custom/exit",
   ],
   // Power Menu
   "custom/exit": {
     "format": "",
     "on-click": "omarchy-menu system",
     "on-click-right": "hyprlock",
-    "tooltip-format": "Left: Power menu\nRight: Lock screen"
+    "tooltip-format": "Left: Power menu\nRight: Lock screen",
   },
   "hyprland/workspaces": {
     "on-click": "activate",
     "format": "{icon}",
     "format-icons": {
-      "default": "",
       "1": "1",
       "2": "2",
       "3": "3",
@@ -64,21 +52,19 @@
       "8": "8",
       "9": "9",
       "10": "0",
-      "active": "<span size='large' font_desc='Pongo Style'>󰣏</span>" // 󱓻   󰣏◇
-      // "active": "󱓻"
     },
     "persistent-workspaces": {
       "1": [],
       "2": [],
       "3": [],
-      "4": []
-    }
+      "4": [],
+    },
   },
   "custom/omarchy": {
     // "format": "<span font='omarchy'>\ue900</span>",
     "format": "<span size='x-large' font_desc='Pongo Style'></span>",
     "on-click": "omarchy-menu",
-    "tooltip-format": "Omarchy Menu\n\nSuper + Alt + Space"
+    "tooltip-format": "Omarchy Menu\n\nSuper + Alt + Space",
   },
   "custom/update": {
     "format": "",
@@ -86,27 +72,21 @@
     "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update",
     "tooltip-format": "Omarchy update available",
     "signal": 7,
-    "interval": 3600
+    "interval": 3600,
   },
   "cpu": {
     "interval": 5,
     "format": "󰍛",
-    "on-click": "omarchy-launch-or-focus-tui btop"
+    "on-click": "omarchy-launch-or-focus-tui btop",
   },
   "clock": {
     "format": "{:L%A %H:%M}",
     "format-alt": "{:L%d %B %Y}",
     "tooltip": false,
-    "on-click-right": "omarchy-launch-floating-terminal-with-presentation omarchy-tz-select"
+    "on-click-right": "omarchy-launch-floating-terminal-with-presentation omarchy-tz-select",
   },
   "network": {
-    "format-icons": [
-      "󰤯",
-      "󰤟",
-      "󰤢",
-      "󰤥",
-      "󰤨"
-    ],
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
     "format": "{icon}",
     "format-wifi": "{icon}",
     "format-ethernet": "󰀂",
@@ -116,7 +96,7 @@
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "spacing": 1,
-    "on-click": "omarchy-launch-wifi"
+    "on-click": "omarchy-launch-wifi",
   },
   "backlight": {
     "format": "{icon}",
@@ -135,9 +115,9 @@
       "",
       "",
       "",
-      ""
+      "",
     ],
-    "scroll-step": 1
+    "scroll-step": 1,
   },
   "battery": {
     "format": "{capacity}% {icon}",
@@ -145,30 +125,8 @@
     "format-charging": " {icon}  {capacity}%",
     "format-plugged": "",
     "format-icons": {
-      "charging": [
-        "󰢜",
-        "󰂆",
-        "󰂇",
-        "󰂈",
-        "󰢝",
-        "󰂉",
-        "󰢞",
-        "󰂊",
-        "󰂋",
-        "󰂅"
-      ],
-      "default": [
-        "󰁺",
-        "󰁻",
-        "󰁼",
-        "󰁽",
-        "󰁾",
-        "󰁿",
-        "󰂀",
-        "󰂁",
-        "󰂂",
-        "󰁹"
-      ]
+      "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+      "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     },
     "format-full": "󰂅",
     "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
@@ -177,8 +135,8 @@
     "on-click": "omarchy-menu power",
     "states": {
       "warning": 20,
-      "critical": 10
-    }
+      "critical": 10,
+    },
   },
   "bluetooth": {
     "format": "",
@@ -186,7 +144,7 @@
     "format-off": "󰂲",
     "format-connected": "",
     "tooltip-format": "Devices connected: {num_connections}",
-    "on-click": "omarchy-launch-bluetooth"
+    "on-click": "omarchy-launch-bluetooth",
   },
   "pulseaudio": {
     "format": "{icon}",
@@ -198,33 +156,26 @@
     "format-icons": {
       "headphone": "",
       "headset": "",
-      "default": [
-        "",
-        "",
-        ""
-      ]
-    }
+      "default": ["", "", ""],
+    },
   },
   "group/tray-expander": {
     "orientation": "inherit",
     "drawer": {
       "transition-duration": 600,
-      "children-class": "tray-group-item"
+      "children-class": "tray-group-item",
     },
-    "modules": [
-      "custom/expand-icon",
-      "tray"
-    ]
+    "modules": ["custom/expand-icon", "tray"],
   },
   "custom/expand-icon": {
     "format": " ",
-    "tooltip": false
+    "tooltip": false,
   },
   "custom/screenrecording-indicator": {
     "on-click": "omarchy-cmd-screenrecord",
     "exec": "$OMARCHY_PATH/default/waybar/indicators/screen-recording.sh",
     "signal": 8,
-    "return-type": "json"
+    "return-type": "json",
   },
   "custom/voxtype": {
     "exec": "omarchy-voxtype-status",
@@ -233,90 +184,102 @@
     "format-icons": {
       "idle": "",
       "recording": "󰍬",
-      "transcribing": "󰔟"
+      "transcribing": "󰔟",
     },
     "tooltip": true,
     "on-click-right": "omarchy-voxtype-config",
-    "on-click": "omarchy-voxtype-model"
+    "on-click": "omarchy-voxtype-model",
   },
   "custom/idle-indicator": {
     "on-click": "omarchy-toggle-idle",
     "exec": "$OMARCHY_PATH/default/waybar/indicators/idle.sh",
     "signal": 9,
-    "return-type": "json"
+    "return-type": "json",
   },
   "custom/notification-silencing-indicator": {
     "on-click": "omarchy-toggle-notification-silencing",
     "exec": "$OMARCHY_PATH/default/waybar/indicators/notification-silencing.sh",
     "signal": 10,
-    "return-type": "json"
+    "return-type": "json",
   },
   "tray": {
     "icon-size": 12,
-    "spacing": 12
+    "spacing": 12,
   },
   "custom/scratchpad": {
     "format": "<span size='medium' font_desc='Pongo Style'></span>",
     "on-click": "hyprctl dispatch togglespecialworkspace music",
-    "tooltip-format": "Music"
+    "tooltip-format": "Music",
   },
   "custom/browser": {
     "format": "<span size='large' font_desc='Pongo Style'>󰊯</span>",
     "on-click": "hyprctl dispatch togglespecialworkspace browser ",
-    "tooltip-format": "Browser"
+    "tooltip-format": "Browser",
   },
   "custom/whatsapp": {
     "format": "<span size='large' font_desc='Pongo Style'></span>",
     "on-click": "hyprctl dispatch togglespecialworkspace whatsapp",
-    "tooltip-format": "Whats App"
+    "tooltip-format": "Whats App",
   },
   "custom/video": {
     "format": "<span size='x-large' font_desc='Pongo Style'>󰯜</span>",
     "on-click": "hyprctl dispatch togglespecialworkspace video",
-    "tooltip-format": "Video"
+    "tooltip-format": "Video",
   },
   "custom/file": {
     "format": "<span size='large' font_desc='Pongo Style'></span>",
     "on-click": "hyprctl dispatch togglespecialworkspace file",
-    "tooltip-format": "File"
+    "tooltip-format": "File",
   },
   "custom/kitty": {
     "format": "<span size='medium' font_desc='Pongo Style'></span>",
     "on-click": "hyprctl dispatch togglespecialworkspace kitty",
-    "tooltip-format": "Kitty"
+    "tooltip-format": "Kitty",
   },
   "custom/waydroid": {
     "format": "<span size='x-large' font_desc='Pongo Style'></span>",
     "on-click": "hyprctl dispatch togglespecialworkspace waydroid",
-    "tooltip-format": "Waydroid"
+    "tooltip-format": "Waydroid",
   },
   "custom/chatgpt": {
     "format": "  ",
     "on-click": "omarchy-launch-webapp https://chatgpt.com/",
-    "tooltip-format": "ChatGPT"
+    "tooltip-format": "ChatGPT",
   },
   "custom/obsidian": {
     "format": "<span size='large' font_desc='Pongo Style'>󰎚</span>",
     "on-click": "hyprctl dispatch togglespecialworkspace obsidian",
-    "tooltip-format": "Obsidian"
+    "tooltip-format": "Obsidian",
   },
   "custom/netspeed": {
     "exec": "/home/ihzabaker/Projects/myhyprland/dotfiles/.config/waybar/net_speed.sh",
     "format": "{}",
     "markup": "pango",
-    "interval": 1
+    "interval": 1,
   },
   "custom/c": {
     "format": "<span size='large' font_desc='Pongo Style'>C</span>",
     "on-click": "hyprctl dispatch togglespecialworkspace c",
     "markup": "pango",
-    "interval": 1
+    "interval": 1,
   },
   "custom/a": {
     "format": "<span size='large' font_desc='Pongo Style'>A</span>",
     "on-click": "hyprctl dispatch togglespecialworkspace a",
     "markup": "pango",
-    "interval": 1
+    "interval": 1,
+  },
+  "custom/up": {
+    "format": "<span size='medium' font_desc='Pongo Style'>U</span>",
+    "on-click": "hyprctl dispatch togglespecialworkspace up",
+    "markup": "pango",
+    "interval": 1,
+  },
+  "custom/down": {
+    "format": "<span size='medium' font_desc='Pongo Style'>D</span>",
+    "on-click": "hyprctl dispatch togglespecialworkspace down",
+    "markup": "pango",
+    "interval": 1,
   },
   // Now Playing
   "custom/nowplaying": {
@@ -329,6 +292,6 @@
     "on-click": "playerctl play-pause",
     "on-click-right": "playerctl next",
     "on-click-middle": "playerctl previous",
-    "tooltip-format": "Left: Play/Pause\nRight: Next\nMiddle: Previous"
-  }
+    "tooltip-format": "Left: Play/Pause\nRight: Next\nMiddle: Previous",
+  },
 }
