@@ -270,15 +270,13 @@
     "interval": 1,
   },
   "custom/up": {
-    "format": "<span size='medium' font_desc='Pongo Style'>U</span>",
+    "format": "↑",
     "on-click": "hyprctl dispatch togglespecialworkspace up",
-    "markup": "pango",
     "interval": 1,
   },
   "custom/down": {
-    "format": "<span size='medium' font_desc='Pongo Style'>D</span>",
+    "format": "↓",
     "on-click": "hyprctl dispatch togglespecialworkspace down",
-    "markup": "pango",
     "interval": 1,
   },
   // Now Playing

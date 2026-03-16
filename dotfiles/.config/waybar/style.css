@@ -1,3 +1,7 @@
+#workspaces button.active {
+  border-bottom: 2px solid @foreground;
+}
+
 @import "../omarchy/current/theme/waybar.css";
 
 * {
@@ -24,16 +28,12 @@
   border-bottom: 2px solid transparent;
 }
 
-#workspaces button.active {
-  border-bottom: 2px solid red;
-}
 #workspaces button {
   all: initial;
   padding: 0 6px;
   margin: 0 1.5px;
   min-width: 9px;
 }
-
 
 #workspaces button.empty {
   opacity: 0.5;
@@ -42,7 +42,6 @@
 .hidden {
   opacity: 0;
 }
-
 
 #custom-screenrecording-indicator,
 #custom-idle-indicator,
@@ -77,13 +76,9 @@
 #custom-video,
 #custom-file,
 #custom-kitty,
-#custom-chatgpt,
 #custom-obsidian,
-#custom-c,
 #custom-up,
 #custom-down,
-#custom-waydroid,
-
 #tray {
   padding: 0 10px;
 }
