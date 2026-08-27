@@ -1,3 +1,7 @@
+alias gcm='git commit -m '
+alias nd='sudo pacman -Syy'
+alias freenodemodule='npx npkill'
+alias y='yazi'
 # ---------------------------
 # 📁 File System
 # ---------------------------
@@ -5,6 +9,8 @@ alias ls='eza -a --icons=always'
 alias ll='eza -al --icons=always'
 alias lt='eza -a --tree --level=1 --icons=always'
 alias shutdown='systemctl poweroff'
+alias cc='code .'
+alias a='antigravity .'
 
 # alias ls='eza -lh --group-directories-first --icons=auto'
 # alias lsa='ls -a'
@@ -52,8 +58,8 @@ alias editfishalias='n ~/.config/fish/conf.d/aliases.fish'
 # 🧰 Tools
 # ---------------------------
 
-alias d='docker'
-alias r='rails'
+# alias d='docker'
+# alias r='rails'
 
 # --- nvim helper ---
 function n
@@ -116,13 +122,12 @@ alias about='fastfetch'
 
 # hyprland things
 alias checkclass='hyprctl clients'
-alias matugen='cd /home/ihzabaker/Projects/myhyprland/dotfiles/.config/hypr/scripts/ & ./set-theme.sh'
 
 # power profile
-alias save='powerprofilesctl set power-saver'
+alias save='sudo bash -c "echo powersave | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor > /dev/null && echo power | tee /sys/devices/system/cpu/cpu*/cpufreq/energy_performance_preference > /dev/null"'
 alias balance='powerprofilesctl set balanced'
-alias perf='powerprofilesctl set performance'
-alias getmode='powerprofilesctl get'
+alias perf='sudo bash -c "echo performance | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor > /dev/null && echo performance | tee /sys/devices/system/cpu/cpu*/cpufreq/energy_performance_preference > /dev/null"'
+alias getmode='printf "Governor: "; cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor; printf "EPP:      "; cat /sys/devices/system/cpu/cpu0/cpufreq/energy_performance_preference; printf "PPD:      "; powerprofilesctl get'
 
 # Check current GTK theme
 alias gtk-theme="grep -E 'gtk-theme-name' ~/.config/gtk-3.0/settings.ini ~/.config/gtk-4.0/settings.ini | awk -F'=' '{print \$2}'"
@@ -180,3 +185,5 @@ alias ser='php artisan ser'
 alias start='npm run dev'
 
 alias migrate-fresh-seed='php artisan migrate:fresh --seed'
+
+alias build='npm run build'
