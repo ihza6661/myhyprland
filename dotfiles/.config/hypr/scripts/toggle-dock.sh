@@ -3,7 +3,7 @@
 # Command to run nwg-dock-hyprland
 # DOCK_CMD="nwg-dock-hyprland -i 25 -w 5 -mb 5 -x -s style.css -c 'walker'"
 
-DOCK_CMD="nwg-dock-hyprland -i 25 -w 5 -mb 10 -x -s style.css -c 'rofi -show drun'"
+DOCK_CMD="nwg-dock-hyprland -i 50 -w 5 -mb 10 -x -s style.css -c 'omarchy-launch-walker'"
 
 # Check if nwg-dock-hyprland is running using full command match
 if pgrep -f "nwg-dock-hyprland" >/dev/null; then
