@@ -1,28 +1,24 @@
 #!/bin/bash
 
-# Lock file path
+# Debounce lock to prevent hardware double-firing (press + release)
 LOCK="/tmp/mic-mute-lock"
 
-# Check if we're handling a key release (don't toggle back)
 if [[ -f "$LOCK" ]]; then
     rm -f "$LOCK"
     exit 0
 fi
 
-# Create lock file
 touch "$LOCK"
+(sleep 0.5; rm -f "$LOCK" 2>/dev/null) &
 
-# Main toggle logic
-SOURCE=$(pactl get-default-source)
-STATE=$(pactl get-source-mute "$SOURCE" | awk '{print $2}')
+# Toggle microphone mute
+wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle >/dev/null 2>&1
 
-if [ "$STATE" = "yes" ]; then
-    pactl set-source-mute "$SOURCE" 0
-    notify-send "Microphone UNMUTED" -t 1000
+if wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q MUTED; then
+  omarchy-brightness-keyboard-mute on 2>/dev/null || true
+  omarchy-osd -i microphone-muted -m "Microphone muted" 2>/dev/null || notify-send "Microphone MUTED" -t 1000
 else
-    pactl set-source-mute "$SOURCE" 1
-    notify-send "Microphone MUTED" -t 1000
+  omarchy-brightness-keyboard-mute off 2>/dev/null || true
+  omarchy-osd -i microphone -m "Microphone on" 2>/dev/null || notify-send "Microphone on" -t 1000
 fi
 
-# Clean up lock file after delay
-(sleep 2; rm -f "$LOCK" 2>/dev/null) &
