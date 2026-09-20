@@ -41,3 +41,6 @@ alias ytdl-mp3="yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-thumbnail
 alias ytdl-music="yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-thumbnail --embed-metadata -P ~/Music -o \"%(title)s.%(ext)s\""
 alias ytdl-playlist="yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-thumbnail --embed-metadata -P ~/Music -o \"%(playlist_title)s/%(title)s.%(ext)s\""
 
+# --- cmus alias ---
+alias music="cmus"
+
